@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0b0b0f">
+    <meta name="description" content="Luma — a modern AI assistant.">
+
+    <title>Luma — AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">L</div>
+                <span>Luma</span>
+            </div>
+
+            <button class="new-chat" id="newChatBtn">
+                <span>＋</span>
+                <span>New chat</span>
+            </button>
+
+            <div class="chat-history" id="chatHistory"></div>
+
+            <div class="sidebar-bottom">
+                <button class="sidebar-button" id="settingsBtn">
+                    <span>⚙</span>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <button class="menu-button" id="menuBtn" aria-label="Open menu">
+                    ☰
+                </button>
+
+                <div class="mobile-brand">
+                    <div class="brand-mark">L</div>
+                    <span>Luma</span>
+                </div>
+
+                <button class="profile-button" id="profileBtn">
+                    A
+                </button>
+            </header>
+
+            <section class="chat-area" id="chatArea">
+
+                <div class="welcome" id="welcomeScreen">
+                    <div class="welcome-mark">L</div>
+
+                    <h1>How can I help?</h1>
+
+                    <p>
+                        Ask Luma anything, explore ideas, or get help with your work.
+                    </p>
+
+                    <div class="suggestions">
+                        <button class="suggestion">
+                            Explain something simply
+                        </button>
+
+                        <button class="suggestion">
+                            Help me write something
+                        </button>
+
+                        <button class="suggestion">
+                            Help me learn coding
+                        </button>
+
+                        <button class="suggestion">
+                            Brainstorm an idea
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+
+            <div class="composer-wrapper">
+
+                <form class="composer" id="chatForm">
+
+                    <textarea
+                        id="messageInput"
+                        rows="1"
+                        placeholder="Message Luma..."
+                        autocomplete="off"
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="send-button"
+                        id="sendBtn"
+                        aria-label="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </form>
+
+                <p class="disclaimer">
+                    Luma can make mistakes. Check important information.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
