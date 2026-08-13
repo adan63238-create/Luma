@@ -4,98 +4,261 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="theme-color" content="#0b0b0f">
-    <meta name="description" content="Luma — a modern AI assistant.">
+    <meta name="theme-color" content="#0d0d0f">
+    <meta name="description" content="Luma — your intelligent AI assistant.">
 
-    <title>Luma — AI Assistant</title>
+    <title>Luma</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div id="app">
+<div class="app">
 
-        <aside class="sidebar">
+    <!-- Mobile overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-top">
+
             <div class="brand">
-                <div class="brand-mark">L</div>
-                <span>Luma</span>
+                <div class="brand-logo">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <span class="brand-name">Luma</span>
             </div>
 
-            <button class="new-chat" id="newChatBtn">
-                <span>＋</span>
+            <button class="new-chat-btn" id="newChatBtn">
+                <span class="new-chat-icon">+</span>
                 <span>New chat</span>
+                <span class="shortcut">⌘ K</span>
             </button>
 
-            <div class="chat-history" id="chatHistory"></div>
+        </div>
 
-            <div class="sidebar-bottom">
-                <button class="sidebar-button" id="settingsBtn">
-                    <span>⚙</span>
-                    <span>Settings</span>
-                </button>
+        <div class="history-section">
+
+            <div class="section-label">
+                Recent
             </div>
-        </aside>
 
-        <main class="main">
+            <div class="history-list" id="historyList">
 
-            <header class="topbar">
-                <button class="menu-button" id="menuBtn" aria-label="Open menu">
-                    ☰
+                <button class="history-item active">
+                    <span class="history-icon">◌</span>
+                    <span>New conversation</span>
                 </button>
 
-                <div class="mobile-brand">
-                    <div class="brand-mark">L</div>
-                    <span>Luma</span>
+            </div>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <button class="sidebar-action" id="exploreBtn">
+                <span class="action-icon">✦</span>
+                <span>Explore</span>
+            </button>
+
+            <button class="sidebar-action" id="settingsBtn">
+                <span class="action-icon">⚙</span>
+                <span>Settings</span>
+            </button>
+
+            <div class="user-card">
+
+                <div class="avatar">
+                    A
                 </div>
 
-                <button class="profile-button" id="profileBtn">
+                <div class="user-info">
+                    <strong>Adan</strong>
+                    <span>Free plan</span>
+                </div>
+
+                <button class="more-btn" aria-label="More options">
+                    •••
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="Open sidebar"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="mobile-title">
+                <div class="mini-logo">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <strong>Luma</strong>
+            </div>
+
+            <div class="header-right">
+
+                <button class="header-button" id="themeBtn">
+                    <span>◐</span>
+                </button>
+
+                <button class="header-avatar">
                     A
                 </button>
-            </header>
 
-            <section class="chat-area" id="chatArea">
+            </div>
 
-                <div class="welcome" id="welcomeScreen">
-                    <div class="welcome-mark">L</div>
+        </header>
 
-                    <h1>How can I help?</h1>
 
-                    <p>
-                        Ask Luma anything, explore ideas, or get help with your work.
-                    </p>
+        <!-- CHAT -->
+        <section class="chat-container" id="chatContainer">
 
-                    <div class="suggestions">
-                        <button class="suggestion">
-                            Explain something simply
-                        </button>
+            <!-- WELCOME -->
+            <div class="welcome" id="welcome">
 
-                        <button class="suggestion">
-                            Help me write something
-                        </button>
-
-                        <button class="suggestion">
-                            Help me learn coding
-                        </button>
-
-                        <button class="suggestion">
-                            Brainstorm an idea
-                        </button>
-                    </div>
+                <div class="welcome-logo">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
 
-            </section>
+                <h1>
+                    What can I help you with?
+                </h1>
 
-            <div class="composer-wrapper">
+                <p>
+                    Ask questions, explore ideas, write, learn,
+                    or build something new.
+                </p>
 
-                <form class="composer" id="chatForm">
 
-                    <textarea
-                        id="messageInput"
-                        rows="1"
-                        placeholder="Message Luma..."
-                        autocomplete="off"
-                    ></textarea>
+                <div class="prompt-grid">
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Explain a difficult concept to me simply"
+                    >
+                        <span class="prompt-icon">✦</span>
+
+                        <span>
+                            <strong>Explain something</strong>
+                            <small>Make a difficult topic simple</small>
+                        </span>
+
+                        <span class="prompt-arrow">→</span>
+                    </button>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Help me write something"
+                    >
+                        <span class="prompt-icon">Aa</span>
+
+                        <span>
+                            <strong>Help me write</strong>
+                            <small>Emails, ideas, stories and more</small>
+                        </span>
+
+                        <span class="prompt-arrow">→</span>
+                    </button>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Teach me programming"
+                    >
+                        <span class="prompt-icon">&lt;/&gt;</span>
+
+                        <span>
+                            <strong>Learn coding</strong>
+                            <small>Understand code step by step</small>
+                        </span>
+
+                        <span class="prompt-arrow">→</span>
+                    </button>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Help me brainstorm a new project"
+                    >
+                        <span class="prompt-icon">⌁</span>
+
+                        <span>
+                            <strong>Brainstorm ideas</strong>
+                            <small>Turn an idea into a plan</small>
+                        </span>
+
+                        <span class="prompt-arrow">→</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGES -->
+            <div class="messages" id="messages"></div>
+
+        </section>
+
+
+        <!-- COMPOSER -->
+        <div class="composer-area">
+
+            <form class="composer" id="chatForm">
+
+                <button
+                    type="button"
+                    class="attach-button"
+                    aria-label="Attach file"
+                >
+                    +
+                </button>
+
+                <textarea
+                    id="messageInput"
+                    rows="1"
+                    maxlength="8000"
+                    placeholder="Message Luma..."
+                    autocomplete="off"
+                ></textarea>
+
+                <div class="composer-tools">
+
+                    <button
+                        type="button"
+                        class="tool-button"
+                        id="voiceBtn"
+                        aria-label="Voice input"
+                    >
+                        ◉
+                    </button>
 
                     <button
                         type="submit"
@@ -106,19 +269,73 @@
                         ↑
                     </button>
 
-                </form>
+                </div>
 
-                <p class="disclaimer">
-                    Luma can make mistakes. Check important information.
-                </p>
+            </form>
 
+            <div class="composer-footer">
+                <span>Luma may make mistakes. Check important information.</span>
+                <span class="status">
+                    <i></i>
+                    Online
+                </span>
             </div>
 
-        </main>
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- SETTINGS PANEL -->
+<div class="modal-backdrop" id="modalBackdrop">
+
+    <div class="settings-panel">
+
+        <div class="settings-header">
+            <div>
+                <span class="settings-eyebrow">LUMA</span>
+                <h2>Settings</h2>
+            </div>
+
+            <button id="closeSettings">×</button>
+        </div>
+
+        <div class="settings-content">
+
+            <div class="setting-row">
+                <div>
+                    <strong>Appearance</strong>
+                    <span>Choose how Luma looks</span>
+                </div>
+
+                <button class="setting-control" id="appearanceControl">
+                    Dark
+                </button>
+            </div>
+
+            <div class="setting-row">
+                <div>
+                    <strong>Model</strong>
+                    <span>AI model used for conversations</span>
+                </div>
+
+                <button class="setting-control">
+                    Luma
+                </button>
+            </div>
+
+        </div>
 
     </div>
 
-    <script src="script.js"></script>
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
-</html>
+    </html>
+
+
